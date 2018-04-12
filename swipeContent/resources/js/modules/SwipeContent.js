@@ -30,7 +30,7 @@ export default class LineAnimation {
   }
 
   swipeEvent() {
-    this.$window.on('touchstart', (event)=> {
+    $(document).on('touchstart', (event)=> {
       event.preventDefault();
       this.touchStartX = event.touches[0].pageX;
       this.touchStartY = event.touches[0].pageY;
@@ -38,7 +38,7 @@ export default class LineAnimation {
     });
 
 
-    this.$window.on('touchmove', (event)=> {
+    $(document).on('touchmove', (event)=> {
       event.preventDefault();
       this.touchMoveY = event.changedTouches[0].pageY;
       console.log('move' + this.touchMoveY);
@@ -46,7 +46,7 @@ export default class LineAnimation {
 
     });
 
-    this.$window.on('touchend', (event)=> {
+    $(document).on('touchend', (event)=> {
       const moveDiff = this.touchMoveY - this.touchStartY;
       if (this.touchStartY > this.touchMoveY) {
         console.log('うえ');
