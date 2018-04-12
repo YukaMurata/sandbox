@@ -31,14 +31,15 @@ export default class LineAnimation {
 
   swipeEvent() {
     this.$window.on('touchstart', (event)=> {
+      event.preventDefault();
       this.touchStartX = event.touches[0].pageX;
       this.touchStartY = event.touches[0].pageY;
-      $('.section__4').append('<p>テキストテキスト</p>');
       console.log('start' + this.touchStartY);
     });
 
 
     this.$window.on('touchmove', (event)=> {
+      event.preventDefault();
       this.touchMoveY = event.changedTouches[0].pageY;
       console.log('move' + this.touchMoveY);
       // const diff = this.touchMoveY - this.touchStartY;
