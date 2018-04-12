@@ -48,7 +48,7 @@ export default class LineAnimation {
       const moveDiff = this.touchMoveY - this.touchStartY;
       if (this.touchStartY > this.touchMoveY) {
         console.log('うえ');
-        $('.modal__inner').append('<p>テキストテキスト</p>');
+        $('.section__4').append('<p>テキストテキスト</p>');
         this.showVendingModal();
       } else if (this.touchStartY < this.touchMoveY) {
         console.log('した');
