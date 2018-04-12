@@ -33,6 +33,7 @@ export default class LineAnimation {
     this.$window.on('touchstart', (event)=> {
       this.touchStartX = event.touches[0].pageX;
       this.touchStartY = event.touches[0].pageY;
+      $('.section__4').append('<p>テキストテキスト</p>');
       console.log('start' + this.touchStartY);
     });
 
@@ -48,7 +49,7 @@ export default class LineAnimation {
       const moveDiff = this.touchMoveY - this.touchStartY;
       if (this.touchStartY > this.touchMoveY) {
         console.log('うえ');
-        $('.section__4').append('<p>テキストテキスト</p>');
+
         this.showVendingModal();
       } else if (this.touchStartY < this.touchMoveY) {
         console.log('した');
