@@ -5,7 +5,8 @@ import Slider from './modules/Slider';
 const swipeContent = new SwipeContent();
 new ModalAnimation();
 const slider = new Slider();
-slider.init();
+
 swipeContent.on('openModal', ()=> {
+  slider.init();
   slider.addEvent();
 });
