@@ -15,10 +15,13 @@ export default class Slider {
       rows: 0
     });
     this.$slideList.css('height', '432px');
+    this.addEvent();
   }
 
   addEvent() {
-    this.$slideList.slick('setPosition');
-    console.log('slick');
+    $('.modal__inner').on('click', ()=> {
+      this.$slideList.slick('setPosition');
+    });
+
   }
 }

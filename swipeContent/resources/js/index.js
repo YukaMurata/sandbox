@@ -8,5 +8,4 @@ const slider = new Slider();
 
 swipeContent.on('openModal', ()=> {
   slider.init();
-  slider.addEvent();
 });
