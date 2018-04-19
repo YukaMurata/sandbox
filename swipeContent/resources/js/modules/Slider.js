@@ -4,7 +4,6 @@ import 'slick-carousel';
 export default class Slider {
   constructor() {
     this.$slideList = $('.slide');
-    console.log('slick');
   }
 
   init() {
@@ -14,6 +13,7 @@ export default class Slider {
       centerPadding: '10%',
       rows: 0
     });
+    console.log('slick');
   }
 
   addEvent() {
