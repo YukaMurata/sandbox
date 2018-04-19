@@ -7,7 +7,7 @@ export default class Slider {
   }
 
   init() {
-    this.$slideList.not('.slick-initialized').slick({
+    this.$slideList.slick({
       dots: false,
       centerMode: true,
       centerPadding: '10%',
