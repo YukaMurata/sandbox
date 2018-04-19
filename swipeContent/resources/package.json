@@ -19,6 +19,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "2.1.2",
     "gulp-watch": "^4.3.11",
+    "slick-carousel": "^1.8.1",
     "uglify-save-license": "^0.4.1",
     "velocity-animate": "^1.5.1",
     "webpack": "^2.2.1"

@@ -4,26 +4,54 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>swipeContents</title>
-<link href="./css/common.css" rel="stylesheet">
-<link href="./css/index.css" rel="stylesheet">
+<link href="/swipeContent/css/common.css" rel="stylesheet">
+<link href="/swipeContent/css/index.css" rel="stylesheet">
 <body>
 <main>
     <section class="section__1"></section>
     <section class="section__2"></section>
     <section class="section__3"></section>
-    <section class="section__4"></section>
+    <section class="section__4">
+        <p class="arrow">▼</p>
+
+
+    </section>
 
 </main>
 
 <div class="overlay"></div>
 <div class="modal">
     <div class="modal__inner">
-        テキスト〜〜〜〜
+        <div class="slide">
+            <div class="slide__item" data-index="0"><img src="/swipeContent/images/image1.png"></div>
+            <div class="slide__item" data-index="1"><img src="/swipeContent/images/image2.png"></div>
+            <div class="slide__item" data-index="2"><img src="/swipeContent/images/image3.png"></div>
+            <div class="slide__item" data-index="3"><img src="/swipeContent/images/image4.png"></div>
+
+        </div>
     </div>
 </div>
 
-<script type="text/javascript" src="./js/vendor.bundle.js"></script>
-<script type="text/javascript" src="./js/index.bundle.js"></script>
+<div class="animation__modal">
+    <p class="animation__modal__cancel"><span></span><span></span></p>
+    <div class="animation__modal__inner1">
+        <p class="caption">なんだかやる気でない？</p>
+        <p class="bottle"><img src="/swipeContent/images/image5.png"></p>
+        <p class="text">そんな時には！<br>やる気サポートリアルゴールド！</p>
+    </div>
+    <div class="animation__modal__inner2">
+        <p class="caption">スーパーやる気チャージ</p>
+        <p class="image"><img src="/swipeContent/images/image5.png"></p>
+        <ul class="button">
+            <li class="button__item">結果をシェア！</li>
+            <li class="button__item">もう一回</li>
+            <li class="button__item">実際に欲しい</li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="/swipeContent/js/vendor.bundle.js"></script>
+<script type="text/javascript" src="/swipeContent/js/index.bundle.js"></script>
 
 </body>
 </html>
