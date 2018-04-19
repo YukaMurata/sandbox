@@ -13,6 +13,7 @@ export default class Slider {
       centerPadding: '10%',
       rows: 0
     });
+    this.$slideList.css(height, '432px');
     console.log('slick');
   }
 
