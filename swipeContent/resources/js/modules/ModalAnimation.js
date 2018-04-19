@@ -26,6 +26,7 @@ export default class ModalAnimation extends EventEmitter {
    */
   addEvent() {
     this.$slideList.on('click', ()=> {
+      console.log('click');
       this.reset();
       this.openModal();
       this.animation$modalInner1();
