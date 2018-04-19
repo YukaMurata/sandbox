@@ -7,6 +7,6 @@ new ModalAnimation();
 const slider = new Slider();
 
 swipeContent.on('openModal', ()=> {
-  slider.init();
-  slider.addEvent();
+  // slider.init();
+  // slider.addEvent();
 });
