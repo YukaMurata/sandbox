@@ -10,8 +10,6 @@ export default class Slider {
   init() {
     this.$slideList.slick({
       dots: false,
-      centerMode: true,
-      centerPadding: '10%',
       rows: 0
     });
     this.$slideList.css('height', '432px');
@@ -21,6 +19,7 @@ export default class Slider {
   addEvent() {
     $('.modal__inner').on('click', ()=> {
       this.$slideList.slick('setPosition');
+      console.log('slick');
     });
 
   }
