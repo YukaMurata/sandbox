@@ -4,6 +4,7 @@ import 'slick-carousel';
 export default class Slider {
   constructor() {
     this.$slideList = $('.slide');
+
   }
 
   init() {
@@ -14,10 +15,10 @@ export default class Slider {
       rows: 0
     });
     this.$slideList.css('height', '432px');
-    console.log('slick');
   }
 
   addEvent() {
     this.$slideList.slick('setPosition');
+    console.log('slick');
   }
 }
