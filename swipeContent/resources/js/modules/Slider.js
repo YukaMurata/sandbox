@@ -7,7 +7,7 @@ export default class Slider {
   }
 
   init() {
-    this.$slideList.slick({
+    this.slide = this.$slideList.slick({
       dots: false,
       rows: 0
     });
@@ -15,7 +15,7 @@ export default class Slider {
   }
 
   addEvent() {
-    this.$slideList.slick('setPosition');
-
+    this.slide.slick('setPosition');
+    this.slide.slick('reinit');
   }
 }
