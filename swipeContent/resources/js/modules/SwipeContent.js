@@ -51,19 +51,20 @@ export default class LineAnimation extends EventEmitter {
    */
   swipeEvent() {
     console.log('swipeEvent');
-    this.$window.on('touchstart', (event)=> {
+    this.$window.on('touchstart.swipe', (event)=> {
       // event.preventDefault();
+      // event.stopPropagation();
       this.touchStartY = event.originalEvent.touches[0].clientY;
     });
 
 
-    this.$window.on('touchmove', (event)=> {
+    this.$window.on('touchmove.swipe', (event)=> {
       // event.preventDefault();
       this.touchMoveY = event.originalEvent.touches[0].clientY;
       this.diff = this.touchStartY - this.touchMoveY;
     });
 
-    this.$window.on('touchend', ()=> {
+    this.$window.on('touchend.swipe', ()=> {
       // event.preventDefault();
       console.log(this.touchStartY);
       console.log(this.touchMoveY);
@@ -77,6 +78,7 @@ export default class LineAnimation extends EventEmitter {
         }
         if (this.diff < -50) {
           if (this.touchStartY < this.touchMoveY) {
+            console.log('うえ');
             this.hideVendingModal();
           }
         }
@@ -91,7 +93,7 @@ export default class LineAnimation extends EventEmitter {
    * スワイプイベントの解除
    */
   resetSwipeEvent() {
-    if (!this.isReset) {
+    if (!this.isReset && !this.isShowModal) {
       console.log('resetEvent');
       this.$window.off('touchstart');
       this.$window.off('touchmove');
@@ -120,7 +122,7 @@ export default class LineAnimation extends EventEmitter {
       this.isShowModal = true;
       this.index++;
     }
-    $('body,html').css({height: this.windowHeight, overflow: 'hidden'});
+    $('body,html').css({overflow: 'hidden'});
   }
 
   /**
