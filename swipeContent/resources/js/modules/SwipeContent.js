@@ -35,7 +35,7 @@ export default class LineAnimation extends EventEmitter {
         console.log('いちばんした');
         this.swipeEvent();
       } else {
-        this.resetSwipeEvent();
+        // this.resetSwipeEvent();
       }
     });
 
