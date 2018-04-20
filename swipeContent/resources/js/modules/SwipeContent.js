@@ -19,7 +19,7 @@ export default class LineAnimation extends EventEmitter {
     this.isShowModal = false;
     this.index = 0;
     this.lastY = 0;
-
+    this.isReset = false;
     this.addEvent();
     this.setModalHeight();
 
@@ -39,6 +39,7 @@ export default class LineAnimation extends EventEmitter {
     });
 
     $('.arrow').on('click', () => {
+      console.log('arrowClick');
       this.showVendingModal();
       this.swipeEvent();
     });
@@ -48,6 +49,7 @@ export default class LineAnimation extends EventEmitter {
    * スワイプイベント
    */
   swipeEvent() {
+    console.log('swipeEvent');
     this.$window.on('touchstart', (event)=> {
       // event.preventDefault();
       this.touchStartY = event.originalEvent.touches[0].clientY;
@@ -65,41 +67,44 @@ export default class LineAnimation extends EventEmitter {
       if (this.lastY !== this.touchMoveY) {
         if (this.diff > 30) {
           if (this.touchStartY > this.touchMoveY) {
-            console.log('うえ');
+            console.log('した');
             this.showVendingModal();
           }
         }
         if (this.diff < -50) {
           if (this.touchStartY < this.touchMoveY) {
-            console.log('した');
             this.hideVendingModal();
           }
         }
       } else {
-        console.log('tap');
       }
       this.lastY = this.touchMoveY;
     });
+    this.isReset = false;
   }
 
   /**
    * スワイプイベントの解除
    */
   resetSwipeEvent() {
-    this.document.off('touchstart');
-    this.document.off('touchmove');
-    this.document.off('touchend');
+    if (!this.isReset) {
+      console.log('resetEvent');
+      this.$window.off('touchstart');
+      this.$window.off('touchmove');
+      this.$window.off('touchend');
+      this.isReset = true;
+    }
   }
 
   /**
    * モーダル開く
    */
   showVendingModal() {
+    console.log('showVendingModal');
     if (this.index === 0) {
       console.log('first');
       this.emit('openModal');
     }
-    console.log(this.isShowModal);
     if (!this.isShowModal) {
       velocity(this.$modal, {
         translateY: [0, 60],
@@ -112,7 +117,7 @@ export default class LineAnimation extends EventEmitter {
       this.index++;
       $('body,html').css({height: 'auto', overflow: 'hidden'});
     }
-    console.log(this.isShowModal);
+
   }
 
   /**
