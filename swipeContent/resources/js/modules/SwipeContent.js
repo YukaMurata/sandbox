@@ -65,6 +65,9 @@ export default class LineAnimation extends EventEmitter {
 
     this.$window.on('touchend', ()=> {
       // event.preventDefault();
+      console.log(this.touchStartY);
+      console.log(this.touchMoveY);
+
       if (this.lastY !== this.touchMoveY) {
         if (this.diff > 30) {
           if (this.touchStartY > this.touchMoveY) {
