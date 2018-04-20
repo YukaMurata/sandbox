@@ -49,7 +49,7 @@ export default class LineAnimation extends EventEmitter {
    */
   swipeEvent() {
     this.$window.on('touchstart', (event)=> {
-      event.preventDefault();
+      // event.preventDefault();
       this.touchStartY = event.originalEvent.touches[0].clientY;
     });
 
