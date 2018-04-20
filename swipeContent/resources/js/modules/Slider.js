@@ -21,7 +21,7 @@ export default class Slider {
     //   console.log(event);
     //   console.log(slick);
     // });
-    this.slider.animate({'z-index': 1}, 400, () => {
+    this.slider.animate({'z-index': 1}, 700, () => {
       this.slider.slick('setPosition');
       this.slider.animate({'opacity': 1});
     });
