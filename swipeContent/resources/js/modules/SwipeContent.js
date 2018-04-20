@@ -137,9 +137,11 @@ export default class LineAnimation extends EventEmitter {
         translateX: ['-50%', '-50%'],
         opacity: [0, 1]
       }, {
-        display: 'none'
+        display: 'none',
+        complete: ()=> {
+          $('body,html').css({height: 'auto', overflow: 'auto'});
+        }
       });
-      $('body,html').css({height: 'auto', overflow: 'auto'});
       this.isShowModal = false;
     }
   }
