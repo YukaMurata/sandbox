@@ -25,5 +25,6 @@ export default class Slider {
       this.slider.slick('setPosition');
       this.slider.animate({'opacity': 1});
     });
+    console.log(this.slider);
   }
 }
