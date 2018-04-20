@@ -32,6 +32,7 @@ export default class LineAnimation extends EventEmitter {
     this.$window.on('scroll', ()=> {
       this.scroll = this.$window.scrollTop();
       if (this.scroll >= this.pageHeight) {
+        console.log('いちばんした');
         this.swipeEvent();
       } else {
         this.resetSwipeEvent();
