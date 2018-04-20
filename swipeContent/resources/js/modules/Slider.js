@@ -4,7 +4,6 @@ import 'slick-carousel';
 export default class Slider {
   constructor() {
     this.$slideList = $('.slide');
-
   }
 
   init() {

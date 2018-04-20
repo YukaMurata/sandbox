@@ -13,20 +13,13 @@ module.exports = {
     path: __dirname + '/../js/'
   },
   module: {
-    // rules: [
-    //     {
-    //         test: /\.js$/,
-    //         exclude: /node_modules/,
-    //         loader: 'eslint-loader',
-    //     },
-    // ],
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
         loader: "babel-loader",
         query: {
-          presets: ["es2015"]
+          presets: ['@babel/preset-env']
         }
       }
     ]

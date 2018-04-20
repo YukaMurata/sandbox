@@ -2,6 +2,9 @@ import $ from 'jquery';
 import velocity from 'velocity-animate';
 import EventEmitter from 'events';
 
+import Slider from './Slider';
+
+const slider = new Slider();
 
 export default class LineAnimation extends EventEmitter {
   constructor() {
@@ -42,6 +45,8 @@ export default class LineAnimation extends EventEmitter {
     $('.arrow').on('click', () => {
       this.showVendingModal();
       this.swipeEvent();
+      slider.init();
+      slider.addEvent();
     });
   }
 
