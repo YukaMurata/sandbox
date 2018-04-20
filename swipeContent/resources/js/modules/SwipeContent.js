@@ -109,6 +109,8 @@ export default class LineAnimation extends EventEmitter {
     console.log('showVendingModal');
     if (this.index === 0) {
       console.log('first');
+      this.emit('openModalFirst');
+    } else {
       this.emit('openModal');
     }
     if (!this.isShowModal) {

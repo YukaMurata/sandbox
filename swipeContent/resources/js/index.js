@@ -10,9 +10,13 @@ const slider = new Slider();
 
 $(window).on('load', ()=> {
 
+  swipeContent.on('openModalFirst', ()=> {
+    console.log('openModalFirst');
+    slider.init();
+    slider.addEvent();
+  });
   swipeContent.on('openModal', ()=> {
     console.log('openModal');
-    slider.init();
     slider.addEvent();
   });
 });
