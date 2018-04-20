@@ -140,9 +140,9 @@ export default class LineAnimation extends EventEmitter {
         display: 'none',
         complete: ()=> {
           $('body,html').css({height: 'auto', overflow: 'auto'});
+          this.isShowModal = false;
         }
       });
-      this.isShowModal = false;
     }
   }
 
