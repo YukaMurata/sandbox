@@ -111,6 +111,7 @@ export default class LineAnimation extends EventEmitter {
       this.isShowModal = true;
       this.index++;
       $('body,html').css({height: 'auto', overflow: 'hidden'});
+      $('.slide').css('display', 'block');
     }
     console.log(this.isShowModal);
   }
