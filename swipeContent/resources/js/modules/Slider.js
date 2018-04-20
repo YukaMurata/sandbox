@@ -7,15 +7,19 @@ export default class Slider {
   }
 
   init() {
-    this.slide = this.$slideList.slick({
+    this.$slideList.slick({
       dots: false,
       rows: 0
     });
     this.$slideList.css('height', '432px');
+    this.$slideList.slick('setPosition');
   }
 
   addEvent() {
-    this.slide.slick('setPosition');
-    this.slide.slick('reinit');
+    console.log(2222);
+    this.$slideList.on('setPosition', (event, slick) => {
+      console.log(event);
+      console.log(slick);
+    });
   }
 }
