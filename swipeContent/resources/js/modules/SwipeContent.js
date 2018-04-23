@@ -29,20 +29,24 @@ export default class LineAnimation extends EventEmitter {
    * イベントまとめたもの
    */
   addEvent() {
-    this.$window.on('scroll', ()=> {
-      this.scroll = this.$window.scrollTop();
-      if (this.scroll >= this.pageHeight) {
-        console.log('いちばんした');
-        this.swipeEvent();
-      } else {
-        this.resetSwipeEvent();
-      }
+    // this.$window.on('scroll', ()=> {
+    //   this.scroll = this.$window.scrollTop();
+    //   if (this.scroll >= this.pageHeight) {
+    //     console.log('いちばんした');
+    //     this.swipeEvent();
+    //   } else {
+    //     this.resetSwipeEvent();
+    //   }
+    // });
+    $('.button').on('click', () => {
+      // this.showVendingModal();
     });
 
     $('.arrow').on('click', () => {
-      console.log('arrowClick');
       this.showVendingModal();
-      this.swipeEvent();
+    });
+    $('.modal__cancel').on('click', () => {
+      this.hideVendingModal();
     });
   }
 
